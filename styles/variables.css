@@ -1,4 +1,7 @@
 :root {
-    --clr-primary: rgb(85, 51, 40);
-    --clr-accent: rgb(25, 146, 89);
+    --clr-dark: rgb(85, 51, 40);
+    --clr-primary: rgb(25, 146, 89);
+    --clr-accent: rgb(255,194,26);
+    --clr-neutral: rgb(255,252,249);
+    --clr-font: rgb(20, 10, 30);
 }
