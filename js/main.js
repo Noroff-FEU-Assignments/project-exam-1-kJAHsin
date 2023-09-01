@@ -1,0 +1,1 @@
+export const baseAPI = "https://blog.skinnyk.no/wp-json/wp/v2/";
