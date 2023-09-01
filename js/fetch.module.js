@@ -13,14 +13,16 @@ const fetchPosts = async () => {
         posts.forEach(postInfo => {
 
             const postTitle = postInfo.content.rendered.replace("\n<p>", "").replace("</p>\n", "");
-            // const postImage = postInfo.content.
+            const postImage = postInfo.featured_media;
 
             const post = {
-                title: postTitle
+                id: postInfo.id,
+                title: postTitle,
+                img: postInfo,
             }
 
 
-            console.log(post)
+            // console.log(post)
         })
     }
     catch (error) {
