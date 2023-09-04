@@ -1,8 +1,5 @@
-// import { fetchImage } from "./fetchimage.js";
-
 const baseAPI = "https://blog.skinnyk.no/wp-json/wp/v2/";
 const fetchURL = `${baseAPI}posts`;
-// const fetchImgURL = `${baseAPI}media/`;
 
 export const fetchPosts = async () => {
     try {
@@ -15,7 +12,6 @@ export const fetchPosts = async () => {
             const postTitle = postInfo.title.rendered;
             const postContent = postInfo.content.rendered;
             const imageID = postInfo.featured_media;
-            // const imageRef = fetchImage(fetchImgURL, imageID);
 
             const post = {
                 postid: postInfo.id,
