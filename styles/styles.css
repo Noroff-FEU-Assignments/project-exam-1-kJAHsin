@@ -1,4 +1,114 @@
+@import url(./variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+
+/* global styles */
 body {
     min-height: 100dvh;
-    
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1rem;
+}
+
+header {
+    background-color: var(--clr-dark);
+    color: var(--clr-neutral);
+    height: 6rem;
+    font-family: "Lobster", cursive;
+    justify-content: center;
+}
+
+/* utility classes */
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.column {
+    flex-direction: column;
+}
+
+/* layout styles */
+
+/* header */
+.header-wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 1280px;
+    justify-content: space-between;
+    padding-inline: 3rem;
+    flex-wrap: wrap;
+}
+
+.header-wrapper > * {
+    margin: auto 0;
+}
+
+.logo {
+    text-align: right;
+}
+
+.nav {
+    gap: 6cqi;
+}
+
+.nav > a:hover {
+    text-decoration: underline;
+}
+
+/* carousel */
+.carousel-wrapper {
+    width: clamp(15rem, 100%, 1280px);
+    overflow: hidden;
+    margin: 2rem auto 3rem;
+    justify-content: flex-start;
+}
+
+.carousel-grid {
+    grid-template-columns: repeat(12, auto);
+    gap: .25rem;
+    transform: translateX(0);
+    transition: transform 700ms ease-in-out;
+}
+
+.carousel-grid.right {
+    transform: translateX(-50%);
+}
+
+.carousel-card {
+    position: relative;
+    width: 14rem;
+    background: linear-gradient(to right, var(--clr-accent), var(--clr-dark));
+}
+
+.carousel-card > img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 12rem;
+}
+
+.carousel-card > p {
+    max-width: 37ch;
+    position: absolute;
+    inset: 0;
+    background-color: rgb(5 5 5 / 0);
+    color: rgb(5 5 5 / 0);
+    transition: background-color 400ms ease-in, color 180ms ease- out 180ms;
+}
+
+.carousel-card:hover > p {
+    background-color: rgb(5 5 5 / .4);
+    color: var(--clr-neutral);
+}
+
+/* scrolling functionality in carousel */
+.scroll-wrapper {
+    margin: 1rem auto;
+    gap: 6rem;
+}
+
+.scroll-wrapper > button {
+    padding: 1rem 2rem;
 }
