@@ -17,6 +17,10 @@ export const createCarousel = async () => {
         const card = document.createElement("div");
         card.className = "carousel-card";
         carouselGrid.appendChild(card);
+
+        const cardTitleBG = document.createElement("div");
+        cardTitleBG.className = "title-bg";
+        card.appendChild(cardTitleBG);
     })
 
     fetchImages();
@@ -33,13 +37,19 @@ export const createCarousel = async () => {
     scrollWrapper.appendChild(leftToggle);
     scrollWrapper.appendChild(rightToggle);
 
+    const firstImgs = document.querySelectorAll(".carousel-card:nth-child(-n + 6)");
+    const lastImgs = document.querySelectorAll(".carousel-card:nth-child(n + 7)");
+
     rightToggle.addEventListener("click", (e) => {
         e.preventDefault();
-        carouselGrid.classList.add("right")
+        firstImgs.forEach(img => {img.classList.add("hidden")})
+        lastImgs.forEach(img => {img.classList.remove("hidden")})
+        console.log(firstImgs)
     })
     
     leftToggle.addEventListener("click", (e) => {
         e.preventDefault();
-        carouselGrid.classList.remove("right")
+        firstImgs.forEach(img => {img.classList.remove("hidden")})
+        lastImgs.forEach(img => {img.classList.add("hidden")})
     })
 }

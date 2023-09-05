@@ -9,9 +9,10 @@ async function setContent() {
     const carouselCards = document.querySelectorAll(".carousel-card");
 
 	blogList.forEach((post, idx) => {
-		const testParagraph = document.createElement("p");
-		testParagraph.innerHTML = post.content;
-		carouselCards[idx].appendChild(testParagraph);
+        const title = document.createElement("h2");
+        title.innerHTML = post.title;
+
+		carouselCards[idx].appendChild(title);
         imageIDs.push(post.imgid);
 	});
 
