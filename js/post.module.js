@@ -1,5 +1,7 @@
 import { fetchPosts, fetchURL } from "./fetch.js";
 import { fetchImgURL } from "./fetchimage.js";
+import { logoLink } from "./links.js";
+logoLink();
 
 const getBlog = async () => {
 	const postId = window.location.href.split("#/").pop();

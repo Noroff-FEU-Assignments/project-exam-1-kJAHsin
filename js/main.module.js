@@ -1,11 +1,7 @@
 import { createCarousel } from "./carousel.js";
+import { logoLink } from "./links.js";
 
-// make logo into link to home page
-const logoLink = document.querySelector(".logo");
-
-logoLink.addEventListener("click", () => {
-    window.location = "./index.html"
-})
+logoLink();
 
 // link to individual blog post page
 const linkToPage = async () => {
