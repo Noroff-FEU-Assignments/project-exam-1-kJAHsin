@@ -38,10 +38,12 @@ async function renderPost() {
     const container = document.querySelector("main");
 
     const title = document.createElement("h1");
+    title.className = "blog-title";
     title.innerHTML = postObject.title;
     container.appendChild(title);
 
     const content = document.createElement("p");
+    content.className = "blog-content";
     content.innerHTML = postObject.content;
     container.appendChild(content);
 

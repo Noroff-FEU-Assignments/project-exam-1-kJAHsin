@@ -121,3 +121,13 @@ header {
 .scroll-wrapper > button {
     padding: 1rem 2rem;
 }
+
+/* individual blog page */
+.blog-title {
+    margin: 3rem auto 2rem;
+}
+
+.blog-content {
+    max-width: 76ch;
+    margin: auto auto 3rem;
+}
