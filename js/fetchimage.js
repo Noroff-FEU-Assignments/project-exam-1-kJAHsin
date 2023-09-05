@@ -1,7 +1,7 @@
 import { fetchPosts } from "./fetch.js";
 
 const baseAPI = "https://blog.skinnyk.no/wp-json/wp/v2/";
-const fetchImgURL = `${baseAPI}media/`;
+export const fetchImgURL = `${baseAPI}media/`;
 
 async function setContent() {
 	const blogList = await fetchPosts();
@@ -35,6 +35,7 @@ export async function fetchImages() {
                 const imageInfo = await renderImg();
                 const image = document.createElement("img");
                 image.src = imageInfo.source_url;
+                image.id = imageInfo.id;
                 carouselCards[idx].appendChild(image)
             }
 

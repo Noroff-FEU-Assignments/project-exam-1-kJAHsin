@@ -47,10 +47,15 @@ header {
 
 .logo {
     text-align: right;
+    cursor: pointer;
 }
 
 .nav {
     gap: 6cqi;
+}
+
+.nav > a {
+    font-size: 1.5rem;
 }
 
 .nav > a:hover {
@@ -61,7 +66,7 @@ header {
 .carousel-wrapper {
     width: clamp(15rem, 100%, 1280px);
     overflow: hidden;
-    margin: 2rem auto 3rem;
+    margin: 5rem auto 3rem;
     justify-content: flex-start;
 }
 
@@ -80,6 +85,7 @@ header {
     position: relative;
     width: 14rem;
     background: linear-gradient(to right, var(--clr-accent), var(--clr-dark));
+    cursor: pointer;
 }
 
 .carousel-card > img {
@@ -97,7 +103,8 @@ header {
     text-overflow: ellipsis;
     background-color: rgb(5 5 5 / 0);
     color: rgb(5 5 5 / 0);
-    transition: background-color 400ms ease-in, color 180ms ease- out 180ms;
+    pointer-events: none;
+    transition: background 400ms ease-in, color 180ms ease- out 180ms;
 }
 
 .carousel-card:hover > p {

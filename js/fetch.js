@@ -1,5 +1,5 @@
 const baseAPI = "https://blog.skinnyk.no/wp-json/wp/v2/";
-const fetchURL = `${baseAPI}posts`;
+export const fetchURL = `${baseAPI}posts`;
 
 export const fetchPosts = async () => {
     try {
