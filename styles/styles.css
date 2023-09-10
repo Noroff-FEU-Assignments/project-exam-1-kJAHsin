@@ -57,7 +57,7 @@ header {
 
 .logo:hover {
     border-color: var(--clr-neutral);
-    transition: border 350ms ease-in-out;
+    transition: border 650ms ease-in-out;
 }
 
 .nav {

@@ -5,7 +5,6 @@ logoLink();
 
 // link to individual blog post page
 const linkToPage = async () => {
-    // create carousel
     await createCarousel();
     const blogLinks = document.querySelectorAll(".carousel-card");
     blogLinks.forEach(link => {

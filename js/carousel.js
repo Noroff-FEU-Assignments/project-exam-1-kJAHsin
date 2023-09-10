@@ -44,7 +44,6 @@ export const createCarousel = async () => {
         e.preventDefault();
         firstImgs.forEach(img => {img.classList.add("hidden")})
         lastImgs.forEach(img => {img.classList.remove("hidden")})
-        console.log(firstImgs)
     })
     
     leftToggle.addEventListener("click", (e) => {
