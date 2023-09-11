@@ -20,6 +20,10 @@ main {
     padding-block: 2rem 5rem;
 }
 
+p {
+    max-width: 54ch;
+}
+
 /* utility classes */
 .flex {
     display: flex;
@@ -205,20 +209,21 @@ main {
 /* blog-posts list */
 .blog-grid {
     grid-template-columns: repeat(auto-fill, minmax(12rem, 15rem));
-    grid-auto-rows: min-content;
     gap: .5rem;
     padding: .5rem;
-    place-content: center;
+    justify-content: center;
 }
 
 .blog-grid > .card {
     position: relative;
     border: 5px solid;
     aspect-ratio: 4 / 3;
+    cursor: pointer;
 }
 
 .blog-grid > .card > h2 {
     color: var(--clr-font);
+    pointer-events: none;
 }
 
 .blog-grid > .card > img {
@@ -236,6 +241,42 @@ main {
 .blog-grid.closed > .card:not(:nth-child(-n + 10)) {
     border-color: green;
     transform: scaleY(0);
+}
+
+/* blog-grid modal */
+.blog-modal.open {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(5 5 5 / .7);
+    display: grid;
+    z-index: 99;
+    clip-path: circle(100%);
+    scale: 1;
+    overflow: hidden;
+    transition: scale 200ms ease-out, clip-path 300ms ease-in 100ms;
+}
+
+.blog-modal {
+    clip-path: circle(0%);
+    scale: 0;
+    transition: scale 200ms ease-out, clip-path 300ms ease-in 100ms;
+}
+
+.blog-modal > h2 {
+    color: white;
+    margin: auto auto 0;
+}
+
+.blog-modal > .modal-image {
+    margin: auto;
+    width: clamp(15rem, 100%, 32rem);
+    aspect-ratio: 4 / 3;
+    background-color: white;
+}
+
+.blog-modal > button {
+    margin: 0 auto auto;
+    padding: 1rem 2rem;
 }
 
 /* contact page */
@@ -269,6 +310,6 @@ main {
 }
 
 .contact-form > input:last-child {
-    padding: 2rem;
+    padding: 1rem 2rem;
     grid-column: 2;
 }

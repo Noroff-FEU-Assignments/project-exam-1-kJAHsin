@@ -84,8 +84,8 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 // dynamic change of validation colors
-contactInputs.forEach((input) => {
-	input.addEventListener("keyup", () => {
+contactInputs.forEach(input => {
+	input.addEventListener("keydown", () => {
 		validateName();
 		validateEmail();
 		validateSubject();
