@@ -15,7 +15,6 @@ async function setContent() {
 		carouselCards[idx].appendChild(title);
 		imageIDs.push(post.imgid);
 	});
-
 	return imageIDs;
 }
 

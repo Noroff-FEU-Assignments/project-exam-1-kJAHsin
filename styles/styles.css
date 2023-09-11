@@ -16,6 +16,10 @@ header {
     justify-content: center;
 }
 
+main {
+    padding-block: 2rem 5rem;
+}
+
 /* utility classes */
 .flex {
     display: flex;
@@ -27,6 +31,11 @@ header {
 
 .column {
     flex-direction: column;
+}
+
+.content-wrapper {
+    max-width: 1280px;
+    margin-inline: auto;
 }
 
 /* layout styles */
@@ -130,6 +139,7 @@ header {
 .carousel-card > h2 {
     position: absolute;
     color: var(--clr-accent);
+    pointer-events: none;
 }
 
 .carousel-card > .title-bg {
@@ -137,6 +147,7 @@ header {
     inset: 0;
     background-color: var(--clr-dark);
     clip-path: polygon(0 68%, 100% 7%, 100% 0, 0 0);
+    pointer-events: none;
 }
 
 .carousel-card > p {
@@ -189,4 +200,31 @@ header {
 .blog-content {
     max-width: 76ch;
     margin: auto auto 3rem;
+}
+
+/* blog-posts list */
+.blog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 15rem));
+    grid-auto-rows: min-content;
+    gap: .5rem;
+    padding: .5rem;
+    place-content: center;
+}
+
+.blog-grid > .card {
+    position: relative;
+    border: 1px solid;
+    aspect-ratio: 4 / 3;
+}
+
+.blog-grid > .card > h2 {
+    color: var(--clr-font);
+}
+
+.blog-grid > .card > img {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    width: 100%;
+    z-index: -1;
 }

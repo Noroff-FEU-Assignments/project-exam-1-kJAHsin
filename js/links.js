@@ -6,3 +6,8 @@ export function logoLink() {
         window.location = "./index.html"
     })
 }
+
+// header nav links
+// export function headerLinks() {
+//     const 
+// }

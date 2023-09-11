@@ -3,6 +3,7 @@ import { fetchImgURL } from "./fetchimage.js";
 import { logoLink } from "./links.js";
 logoLink();
 
+// fetch specific blog
 const getBlog = async () => {
 	const postId = window.location.href.split("#/").pop();
 	const blogList = await fetchPosts();
@@ -49,6 +50,7 @@ async function renderPost() {
     content.innerHTML = postObject.content;
     container.appendChild(content);
 
+    document.title += " " + postObject.title;
 }
 
 renderPost();
