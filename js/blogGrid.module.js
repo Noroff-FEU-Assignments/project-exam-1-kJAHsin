@@ -1,5 +1,8 @@
 import { fetchPosts } from "./fetch.js";
 import { fetchImgURL } from "./fetchimage.js";
+import { logoLink } from "./links.js";
+
+logoLink();
 
 const cards = document.querySelectorAll(".blog-grid > .card");
 

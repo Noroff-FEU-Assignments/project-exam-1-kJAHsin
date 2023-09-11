@@ -1,4 +1,7 @@
 import { isValid, isNotValid, isEmpty } from "./validation.js";
+import { logoLink } from "./links.js";
+
+logoLink();
 
 // form validation
 const contactForm = document.querySelector(".contact-form");
