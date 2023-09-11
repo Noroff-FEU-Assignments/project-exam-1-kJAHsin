@@ -43,3 +43,12 @@ async function setImages(url, img) {
 }
 
 setCards();
+
+// view more button
+const viewBtn = document.getElementById("viewMore");
+const blogGrid = document.querySelector(".blog-grid")
+
+viewBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    blogGrid.classList.toggle("closed")
+})

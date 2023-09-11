@@ -8,6 +8,7 @@
 			content="OkkaSopp mushroom blog contact page"
 		/>
 		<title>OkkaSopp | Contact</title>
+		<script src="./js/contactForm.module.js" type="module"></script>
 		<link rel="stylesheet" href="./styles/reset.css" />
 		<link rel="stylesheet" href="./styles/variables.css" />
 		<link rel="stylesheet" href="./styles/styles.css" />
@@ -28,14 +29,25 @@
 			</div>
 		</header>
 		<main class="content-wrapper flex column">
+			<form action="#" class="contact-form grid">
+				<label for="contactName">Name:</label>
+				<input type="text" id="contactName" minlength="5" placeholder="enter your name"/>
+				<label for="contactEmail">Email:</label>
+				<input type="text" id="contactEmail" placeholder="enter your email"/>
+				<label for="contactSubject">Subject:</label>
+				<input type="text" id="contactSubject" placeholder="enter a subject for your message"/>
+				<label for="contactMessage">Message:</label>
+				<textarea id="contactMessage" rows="5" placeholder="enter your message here"></textarea>
+				<input type="submit" value="submit" id="submitBtn" />
+			</form>
 			<p>
-				<span>OkkaSopp 🍄</br></span>
-				<span>Address:</br></span>
-				<span>Enchanted Forest Lane</br></span>
-				<span>Rogaland, Norway</br></span>
-				<span>Email:</br></span>
-				<span>info@mysticalmushroomadventures.no</br></span>
-				<span>Phone: +47 123 456 789</br></span>
+				<span>OkkaSopp 🍄<br /></span>
+				<span>Address:<br /></span>
+				<span>Enchanted Forest Lane<br /></span>
+				<span>Rogaland, Norway<br /></span>
+				<span>Email:<br /></span>
+				<span>info@mysticalmushroomadventures.no<br /></span>
+				<span>Phone: +47 123 456 789<br /></span>
 				<span
 					>Get in Touch with the OkkaSopp! Have questions, stories to
 					share, or simply want to say hello? Reach out to us via

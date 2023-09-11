@@ -213,7 +213,7 @@ main {
 
 .blog-grid > .card {
     position: relative;
-    border: 1px solid;
+    border: 5px solid;
     aspect-ratio: 4 / 3;
 }
 
@@ -227,4 +227,48 @@ main {
     object-fit: cover;
     width: 100%;
     z-index: -1;
+}
+
+.blog-grid > .card:not(:nth-child(-n + 10)) {
+    border-color: yellow;
+}
+
+.blog-grid.closed > .card:not(:nth-child(-n + 10)) {
+    border-color: green;
+    transform: scaleY(0);
+}
+
+/* contact page */
+.contact-form {
+    grid-template-columns: max-content 15rem;
+    gap: .5rem;
+    margin-inline: auto;
+}
+
+.contact-form > input,
+.contact-form > textarea {
+    border: 6px solid gray;
+}
+
+.contact-form > input.valid,
+.contact-form > textarea.valid {
+    border: 6px solid green;
+}
+
+.contact-form > input.invalid,
+.contact-form > textarea.invalid {
+    border: 6px solid red;
+}
+
+.contact-form > textarea {
+    resize: none;
+}
+
+.contact-form > textarea {
+    font-family: inherit;
+}
+
+.contact-form > input:last-child {
+    padding: 2rem;
+    grid-column: 2;
 }
