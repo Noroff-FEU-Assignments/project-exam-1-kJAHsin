@@ -1,3 +1,4 @@
+/* imports */
 @import url(./variables.css);
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:wght@400;500;600;700;800&display=swap');
 
@@ -186,7 +187,7 @@ p {
     transform-origin: right;
 }
 
-/* scrolling functionality in carousel */
+/* scrolling toggles in carousel */
 .scroll-wrapper {
     margin: 1rem auto;
     gap: 6rem;

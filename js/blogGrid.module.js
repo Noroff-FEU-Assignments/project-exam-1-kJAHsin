@@ -2,8 +2,10 @@ import { fetchPosts } from "./fetch.js";
 import { fetchImgURL } from "./fetchimage.js";
 import { logoLink } from "./links.js";
 
+// set home link on logo in header
 logoLink();
 
+// hoooking into cards in blog grid
 const cards = document.querySelectorAll(".blog-grid > .card");
 
 async function setCards() {
@@ -22,12 +24,14 @@ async function setCards() {
 	});
 }
 
+// fetching image data
 async function fetchImage(url) {
 	const results = await fetch(url);
 	const imageData = results.json();
 	return imageData;
 }
 
+// setting source and alt properties on images
 async function setImages(url, img) {
 	const imageData = await fetchImage(url);
 	img.src = imageData.source_url;
@@ -48,6 +52,7 @@ const imageModal = document.createElement("div");
 imageModal.className = "blog-modal flex";
 document.body.appendChild(imageModal);
 
+// building modal elements
 const modalTitle = document.createElement("h2");
 imageModal.appendChild(modalTitle);
 
@@ -77,6 +82,7 @@ async function getImageId() {
 
 getImageId();
 
+// closes modal on click outside of modal, button and title
 imageModal.addEventListener("click", (e) => {
     if (e.target !== modalTitle && e.target !== modalImg && e.target !== modalLink) {
         imageModal.classList.remove("open");

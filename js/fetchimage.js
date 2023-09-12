@@ -3,6 +3,7 @@ import { fetchPosts } from "./fetch.js";
 const baseAPI = "https://blog.skinnyk.no/wp-json/wp/v2/";
 export const fetchImgURL = `${baseAPI}media/`;
 
+// setting non-image content from fetch
 async function setContent() {
 	const blogList = await fetchPosts();
 	const imageIDs = [];
@@ -18,11 +19,13 @@ async function setContent() {
 	return imageIDs;
 }
 
+// 
 export async function fetchImages() {
 	try {
 		const imageIDs = await setContent();
 		const carouselCards = document.querySelectorAll(".carousel-card");
 
+		// grabbing image by image id
 		imageIDs.forEach((image, idx) => {
 			async function renderImg() {
 				const results = await fetch(fetchImgURL + image);
@@ -30,6 +33,7 @@ export async function fetchImages() {
 				return images;
 			}
 
+			// setting image url and alt, and appending it to it's card
 			async function setImages() {
 				const imageInfo = await renderImg();
 				const image = document.createElement("img");

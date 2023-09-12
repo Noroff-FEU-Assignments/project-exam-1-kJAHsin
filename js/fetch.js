@@ -1,6 +1,8 @@
 const baseAPI = "https://blog.skinnyk.no/wp-json/wp/v2/";
 export const fetchURL = `${baseAPI}posts?per_page=12`;
 
+// fetch elements from posts
+// push into blogList that will be returned when reusing the function
 export const fetchPosts = async () => {
 	try {
 		const results = await fetch(fetchURL);

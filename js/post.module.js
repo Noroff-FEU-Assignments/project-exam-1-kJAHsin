@@ -9,6 +9,7 @@ const getBlog = async () => {
 	const blogList = await fetchPosts();
 	let postContent;
 
+	// loop through blog posts to find match
 	blogList.forEach((post) => {
 		if (post.imgid == postId) {
 			postContent = post;
@@ -17,6 +18,7 @@ const getBlog = async () => {
 	return postContent;
 };
 
+// create object from post content
 async function renderPage() {
 	const postContent = await getBlog();
 
@@ -29,6 +31,7 @@ async function renderPage() {
 	return postObject;
 }
 
+// function to return url to fetch image
 const getImageFetchURL = (id) => {
 	const imageURL = fetchImgURL + id;
 	return imageURL;

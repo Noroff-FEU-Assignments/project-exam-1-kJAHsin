@@ -1,6 +1,7 @@
 import { fetchPosts } from "./fetch.js";
 import { fetchImages } from "./fetchimage.js";
 
+// creating carousel in dom
 export const createCarousel = async () => {
     const posts = await fetchPosts();
     const main = document.querySelector("main");
@@ -25,6 +26,7 @@ export const createCarousel = async () => {
 
     fetchImages();
 
+    // creating scroll toggle in dom
     const scrollWrapper = document.createElement("div");
     scrollWrapper.className = "scroll-wrapper flex";
     main.appendChild(scrollWrapper)
@@ -37,6 +39,8 @@ export const createCarousel = async () => {
     scrollWrapper.appendChild(leftToggle);
     scrollWrapper.appendChild(rightToggle);
 
+    // scrolling logic
+    // will be tweaked
     const firstImgs = document.querySelectorAll(".carousel-card:nth-child(-n + 6)");
     const lastImgs = document.querySelectorAll(".carousel-card:nth-child(n + 7)");
 

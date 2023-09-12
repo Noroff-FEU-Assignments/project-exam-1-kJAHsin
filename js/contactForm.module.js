@@ -1,9 +1,11 @@
 import { isValid, isNotValid, isEmpty } from "./validation.js";
 import { logoLink } from "./links.js";
 
+// setting home link on logo
 logoLink();
 
 // form validation
+// hooking into 
 const contactForm = document.querySelector(".contact-form");
 const contactName = document.getElementById("contactName");
 const contactEmail = document.getElementById("contactEmail");
@@ -12,6 +14,7 @@ const contactMessage = document.getElementById("contactMessage");
 
 const submitBtn = document.getElementById("submitBtn");
 
+// object with key-valued alert messages
 const invalidAlertMessages = {
 	contactName:
 		"Please enter a valid name: 5-33 characters, only letters and spaces",
@@ -19,8 +22,6 @@ const invalidAlertMessages = {
 	contactSubject: "Please enter a valid subject: greater than 15 characters",
 	contactMessage: "Please enter a valid message: greater than 25 characters",
 };
-
-console.log(invalidAlertMessages);
 
 // validate name
 function validateName() {
@@ -61,11 +62,13 @@ function validateMessage() {
 		: isNotValid(contactMessage);
 }
 
+// array of inputs for contact form
 const contactInputs = [
 	...contactForm.querySelectorAll("input"),
 	contactForm.querySelector("textarea"),
 ];
 
+// catch errors and report error message to user
 function alertInvalid() {
 	contactInputs.forEach((input) => {
 		if (input.className === "invalid") {
