@@ -32,8 +32,10 @@ export const createCarousel = async () => {
     main.appendChild(scrollWrapper)
 
     const leftToggle = document.createElement("button");
+    leftToggle.className = "toggle-left"
     leftToggle.innerText = "left";
     const rightToggle = document.createElement("button");
+    rightToggle.className = "toggle-right"
     rightToggle.innerText = "right";
 
     scrollWrapper.appendChild(leftToggle);
@@ -41,18 +43,18 @@ export const createCarousel = async () => {
 
     // scrolling logic
     // will be tweaked
-    const firstImgs = document.querySelectorAll(".carousel-card:nth-child(-n + 6)");
-    const lastImgs = document.querySelectorAll(".carousel-card:nth-child(n + 7)");
+    let translate = 0;
 
     rightToggle.addEventListener("click", (e) => {
         e.preventDefault();
-        firstImgs.forEach(img => {img.classList.add("hidden")})
-        lastImgs.forEach(img => {img.classList.remove("hidden")})
+        translate -= 12.25;
+        carouselGrid.style.translate = `${translate}rem`
     })
     
     leftToggle.addEventListener("click", (e) => {
         e.preventDefault();
-        firstImgs.forEach(img => {img.classList.remove("hidden")})
-        lastImgs.forEach(img => {img.classList.add("hidden")})
+        translate += 12.25;
+        carouselGrid.style.translate = `${translate}rem`;
+        
     })
 }

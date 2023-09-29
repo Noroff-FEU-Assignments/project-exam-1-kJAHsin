@@ -112,14 +112,12 @@ p {
 }
 
 .carousel-grid {
-    grid-template-columns: repeat(12, auto);
-    gap: .25rem;
-    transform: translateX(0);
-    transition: transform 700ms ease-in-out;
-}
+    --translate: 0;
 
-.carousel-grid.right {
-    transform: translateX(-50%);
+    grid-template-columns: repeat(12, auto);
+    gap: .5rem;
+    transform: translateX(0);
+    transition: all 700ms ease-in-out;
 }
 
 .carousel-card {
@@ -170,13 +168,6 @@ p {
 .carousel-card:hover > p {
     background-color: rgb(5 5 5 / .4);
     color: var(--clr-neutral);
-}
-
-.carousel-card.hidden {
-    transform: scaleX(0);
-    width: 0;
-    opacity: 0;
-    transition: opacity 350ms ease-out, transform 250ms ease-out, width 300ms ease-in;
 }
 
 .carousel-card:nth-child(-n + 6) {
