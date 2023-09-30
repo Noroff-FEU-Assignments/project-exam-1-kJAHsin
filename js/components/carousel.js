@@ -1,5 +1,5 @@
-import { fetchPosts } from "./fetch.js";
-import { fetchImages } from "./fetchimage.js";
+import { fetchPosts } from "../functions/fetch.js";
+import { fetchImages } from "../functions/fetchimage.js";
 
 // creating carousel in dom
 export const createCarousel = async () => {

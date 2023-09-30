@@ -1,6 +1,6 @@
-import { fetchPosts } from "./fetch.js";
-import { fetchImgURL } from "./fetchimage.js";
-import { logoLink } from "./links.js";
+import { fetchPosts } from "../functions/fetch.js";
+import { fetchImgURL } from "../functions/fetchimage.js";
+import { logoLink } from "../functions/links.js";
 
 // set home link on logo in header
 logoLink();
@@ -45,6 +45,10 @@ const blogGrid = document.querySelector(".blog-grid");
 viewBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 	blogGrid.classList.toggle("closed");
+	console.log(blogGrid.className);
+	(blogGrid.className == "blog-grid grid") ?
+		viewBtn.innerText = "view less" :
+		viewBtn.innerText = "view more";
 });
 
 // open modal

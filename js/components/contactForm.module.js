@@ -1,5 +1,5 @@
-import { isValid, isNotValid, isEmpty } from "./validation.js";
-import { logoLink } from "./links.js";
+import { isValid, isNotValid, isEmpty } from "../functions/validation.js";
+import { logoLink } from "../functions/links.js";
 
 // setting home link on logo
 logoLink();
