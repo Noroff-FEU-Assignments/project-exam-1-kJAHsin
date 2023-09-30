@@ -1,5 +1,5 @@
-import { createCarousel } from "./carousel.js";
-import { logoLink } from "./links.js";
+import { createCarousel } from "../components/carousel.js";
+import { logoLink } from "../functions/links.js";
 
 logoLink();
 

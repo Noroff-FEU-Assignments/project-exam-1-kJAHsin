@@ -43,18 +43,32 @@ export const createCarousel = async () => {
 
     // scrolling logic
     // will be tweaked
+    let wrapperWidth;
+    let gridWidth;
     let translate = 0;
-
+    let translateX = 12.5;
+    
     rightToggle.addEventListener("click", (e) => {
         e.preventDefault();
-        translate -= 12.25;
-        carouselGrid.style.translate = `${translate}rem`
+        wrapperWidth = carouselWrapper.clientWidth;
+        gridWidth = carouselGrid.clientWidth;
+        
+        if ((gridWidth - wrapperWidth ) * -1 / 16 < translate) {
+            translate -= translateX;
+            carouselGrid.style.translate = `${translate}rem`;
+        }
+        
     })
     
     leftToggle.addEventListener("click", (e) => {
         e.preventDefault();
-        translate += 12.25;
-        carouselGrid.style.translate = `${translate}rem`;
-        
+        wrapperWidth = carouselWrapper.clientWidth;
+        gridWidth = carouselGrid.clientWidth;
+
+        if (translate < 0) {
+            translate += translateX;
+            carouselGrid.style.translate = `${translate}rem`;
+        }
+
     })
 }

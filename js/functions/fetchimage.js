@@ -1,4 +1,4 @@
-import { fetchPosts } from "./fetch.js";
+import { fetchPosts } from "../functions/fetch.js";
 
 const baseAPI = "https://blog.skinnyk.no/wp-json/wp/v2/";
 export const fetchImgURL = `${baseAPI}media/`;
@@ -10,7 +10,7 @@ async function setContent() {
 	const carouselCards = document.querySelectorAll(".carousel-card");
 
 	blogList.forEach((post, idx) => {
-		const title = document.createElement("h2");
+		const title = document.createElement("h3");
 		title.innerHTML = post.title;
 
 		carouselCards[idx].appendChild(title);

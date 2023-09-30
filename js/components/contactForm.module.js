@@ -1,4 +1,4 @@
-import { isValid, isNotValid, isEmpty } from "../functions/validation.js";
+import { isValid, isNotValid } from "../functions/validation.js";
 import { logoLink } from "../functions/links.js";
 
 // setting home link on logo

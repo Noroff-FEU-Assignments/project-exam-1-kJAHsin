@@ -6,7 +6,3 @@ export function isValid(elem) {
 export function isNotValid(elem) {
 	elem.className = "invalid";
 }
-
-export function isEmpty(elem) {
-	elem.className = "";
-}

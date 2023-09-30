@@ -36,6 +36,7 @@ async function setImages(url, img) {
 	const imageData = await fetchImage(url);
 	img.src = imageData.source_url;
 	img.alt = imageData.alt_text;
+	img.id = imageData.id;
 }
 
 // view more button
@@ -69,6 +70,7 @@ modalLink.className = "modalBtn";
 modalLink.innerText = "view blog post";
 imageModal.appendChild(modalLink);
 
+
 // click event to fill modal image
 async function getImageId() {
 	await setCards();
@@ -79,12 +81,20 @@ async function getImageId() {
 			const selectedImage = card.querySelector("img");
 			modalImg.src = selectedImage.src;
 			modalImg.alt = selectedImage.alt;
+			modalLink.id = selectedImage.id;
+			console.log(modalLink.id)
 			imageModal.classList.add("open");
 		});
 	});
 }
 
 getImageId();
+
+// click even to link to individual post page
+modalLink.addEventListener("click", (e) => {
+	const imageID = e.target.id;
+	window.location.href = `/post.html#/${imageID}`
+})
 
 // closes modal on click outside of modal, button and title
 imageModal.addEventListener("click", (e) => {

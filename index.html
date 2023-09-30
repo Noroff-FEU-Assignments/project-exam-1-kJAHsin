@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="OkkaSopp mushroom blog">
     <title>OkkaSopp | Blog</title>
-    <script src="./js/main.module.js" type="module"></script>
+    <script src="./js/pages/main.module.js" type="module"></script>
+    <script src="./js/components/loader.js" defer></script>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/variables.css">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
+    <div class="loader">
+        <img src="./assets/amanita-icon.png" alt="the amanita mushroom icon">
+        <div class="logo">
+            <h2>Okka Sopp</h2>
+            <small>your blog about shrooms</small>
+        </div>
+    </div>
     <header class="flex">
         <div class="header-wrapper flex">
             <div class="logo">
-                <h1>Okka Sopp</h1>
+                <h2>Okka Sopp</h2>
                 <small>your blog about shrooms</small>
             </div>
             <ul class="nav flex" role="navigation">
@@ -25,7 +33,9 @@
             </ul>
         </div>
     </header>
-    <main class="flex column"></main>
+    <main class="flex column">
+        <h1>Featured Posts</h1>
+    </main>
     <footer></footer>
 </body>
 </html>
