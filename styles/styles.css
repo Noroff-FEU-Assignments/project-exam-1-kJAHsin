@@ -395,3 +395,24 @@ p {
     padding: 1rem 2rem;
     grid-column: 2;
 }
+
+.submit-modal {
+    position: fixed;
+    inset: 0;
+    background-color: var(--clr-neutral);
+    place-content: center;
+    clip-path: circle(0);
+    transition: clip-path 120ms linear;
+}
+
+.submit-modal.show {
+    clip-path: circle(100%);
+    transition: clip-path 420ms ease-in-out;
+}
+
+.submit-modal .dialog-box {
+    background-color: var(--clr-dark);
+    color: white;
+    padding: 2rem 3rem;
+    text-align: center;
+}

@@ -100,3 +100,25 @@ contactInputs.forEach(input => {
 		validateMessage();
 	});
 });
+
+// name in modal
+const submitModal = document.querySelector(".submit-modal");
+const closeBtn = document.querySelector(".close-modal");
+const modalText = submitModal.querySelector("p");
+
+function showModal() {
+	contactInputs.forEach(input => {
+		if (input.className != "invalid") {
+			submitModal.classList.add("show");
+			modalText.innerText = contactName.value;
+		}
+	})
+}
+
+function closeModal() {
+	submitModal.classList.remove("show");
+}
+
+submitBtn.addEventListener("click", showModal);
+
+closeBtn.addEventListener("click", closeModal);
