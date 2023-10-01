@@ -1,4 +1,8 @@
 import { isValid, isNotValid } from "../functions/validation.js";
+import { logoLink } from "../functions/links.js";
+
+// set link on logo in header
+logoLink();
 
 // form validation
 // hooking into 
@@ -21,14 +25,14 @@ const invalidAlertMessages = {
 
 // validate name
 function validateName() {
-	const regEx = /^[a-zA-Z]*$/g;
-	const minLength = 5;
+	const regEx = /^[a-zA-Z,æ,ø,å, ]*$/g;
+	const minLength = 4;
 	const maxLength = 33;
 	const nameInput = contactName.value;
 	const nameInputLength = nameInput.length;
 
 	minLength <= nameInputLength &&
-	nameInputLength <= maxLength &&
+	nameInputLength < maxLength &&
 	regEx.test(nameInput)
 		? isValid(contactName)
 		: isNotValid(contactName);

@@ -1,4 +1,8 @@
 import { createCarousel } from "../components/carousel.js";
+import { logoLink } from "../functions/links.js";
+
+// set link on logo in header
+logoLink();
 
 // link to individual blog post page
 const linkToPage = async () => {
