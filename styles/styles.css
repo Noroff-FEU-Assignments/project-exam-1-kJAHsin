@@ -460,6 +460,7 @@ p {
 	padding: 2rem 3rem;
 	text-align: center;
     gap: 1.25rem;
+	border-radius: 6px;
 	position: relative;
 }
 
