@@ -33,10 +33,10 @@ export const createCarousel = async () => {
 
     const leftToggle = document.createElement("button");
     leftToggle.className = "toggle-left"
-    leftToggle.innerText = "left";
+    leftToggle.innerText = "< left";
     const rightToggle = document.createElement("button");
     rightToggle.className = "toggle-right"
-    rightToggle.innerText = "right";
+    rightToggle.innerText = "right >";
 
     scrollWrapper.appendChild(leftToggle);
     scrollWrapper.appendChild(rightToggle);

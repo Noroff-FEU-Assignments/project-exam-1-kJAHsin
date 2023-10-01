@@ -156,7 +156,6 @@ p {
 		background-color: var(--clr-dark);
 		padding: 1rem 1rem 4rem 2.5rem;
 		z-index: 999;
-        border: 1px solid white;
         translate: 100%;
         transition: translate 250ms ease-out;
 	}
@@ -167,6 +166,13 @@ p {
 
     .burger-icon {
         display: block;
+        margin-block-end: 3rem;
+    }
+}
+
+@media (max-width: 281px) {
+    .header-wrapper {
+        justify-content: center;
     }
 }
 
@@ -181,17 +187,14 @@ p {
 }
 
 .carousel-grid {
-	--translate: 0;
-
-	grid-template-columns: repeat(12, auto);
+    grid-template-columns: repeat(12, auto);
 	gap: 0.5rem;
-	transform: translateX(0);
-	transition: all 700ms ease-in-out;
+	transition: translate 700ms ease-in-out;
 }
 
 .carousel-card {
 	position: relative;
-	width: 12rem;
+	width: 10rem;
 	background: linear-gradient(to right, var(--clr-accent), var(--clr-dark));
 	cursor: pointer;
 	border-radius: 2px;
@@ -247,16 +250,22 @@ p {
 /* scrolling toggles in carousel */
 .scroll-wrapper {
 	margin: 0 auto;
-	gap: 6rem;
+	gap: 5vw;
 }
 
 .scroll-wrapper > button {
-	padding: 0.75rem 1.75rem;
+	padding: 0.5rem 1.25rem;
 	cursor: pointer;
 	font-family: "Lobster", cursive;
-	font-size: 1.75rem;
-	border: 4px solid var(--clr-dark);
+	font-size: calc(1rem + 1cqi);
+	border: 3px solid var(--clr-dark);
 	border-radius: 6px;
+    transition: translate 200ms ease-in;
+}
+
+.scroll-wrapper > button:hover,
+.scroll-wrapper > button:focus-visible {
+    translate: 0 -2px;
 }
 
 /* individual blog page */
@@ -421,8 +430,11 @@ p {
 }
 
 .contact-form > input[type="submit"] {
-	padding: 1rem 2rem;
-	grid-column: 2;
+	padding: .75rem 2rem;
+    margin: .75rem auto;
+    border-radius: 3px;
+    border: 2px solid var(--clr-primary);
+    background-color: var(--clr-neutral);
 }
 
 .submit-modal {
