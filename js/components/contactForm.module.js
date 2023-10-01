@@ -49,7 +49,7 @@ function validateEmail() {
 // validate subject
 function validateSubject() {
 	const subjectInputLength = contactSubject.value.length;
-	subjectInputLength > 15
+	subjectInputLength >= 14
 		? isValid(contactSubject)
 		: isNotValid(contactSubject);
 }
@@ -57,7 +57,7 @@ function validateSubject() {
 // validate message
 function validateMessage() {
 	const messageInputLength = contactMessage.value.length;
-	messageInputLength > 25
+	messageInputLength >= 24
 		? isValid(contactMessage)
 		: isNotValid(contactMessage);
 }
