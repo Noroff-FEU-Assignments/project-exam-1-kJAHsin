@@ -1,424 +1,470 @@
 /* imports */
 @import url(./reset.css);
 @import url(./variables.css);
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:wght@400;500;600;700;800&display=swap");
 
 /* global styles */
 body {
-    min-height: 100dvh;
-    font-family: "Noto Sans", sans-serif;
-    font-size: 1rem;
+	min-height: 100dvh;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1rem;
 }
 
 header {
-    background-color: var(--clr-dark);
-    color: var(--clr-neutral);
-    min-height: 6rem;
-    font-family: "Lobster", cursive;
-    justify-content: center;
+	background-color: var(--clr-dark);
+	color: var(--clr-neutral);
+	min-height: 6rem;
+	font-family: "Lobster", cursive;
+	justify-content: center;
 }
 
 main {
-    padding-block: 2rem 5rem;
+	padding-block: 2rem 5rem;
 }
 
 h1 {
-    margin: 0 auto;
-    font-family: "Lobster", cursive;
-    font-size: calc(1.5rem + 1.5cqi);
-    color: var(--clr-primary);
+	margin: 0 auto;
+	font-family: "Lobster", cursive;
+	font-size: calc(1.5rem + 1.5cqi);
+	color: var(--clr-primary);
 }
 
 h2 {
-    font-family: "Lobster", cursive;
-    font-size: calc(1.25rem + 1.5cqi);
+	font-family: "Lobster", cursive;
+	font-size: calc(1.25rem + 1.5cqi);
 }
 
 p {
-    max-width: 68ch;
+	max-width: 68ch;
+    padding-inline: .25rem;
 }
 
 /* utility classes */
 .flex {
-    display: flex;
+	display: flex;
 }
 
 .grid {
-    display: grid;
+	display: grid;
 }
 
 .column {
-    flex-direction: column;
+	flex-direction: column;
 }
 
 .content-wrapper {
-    max-width: 1280px;
-    margin-inline: auto;
+	max-width: 1280px;
+	margin-inline: auto;
+}
+
+.hidden {
+	display: none;
 }
 
 /* layout styles */
 
 /* loader */
 .loader {
-    position: fixed;
-    inset: 0;
-    background-color: var(--clr-primary);
-    z-index: 9999;
-    display: flex;
-    flex-wrap: wrap;
-    opacity: 1;
-    clip-path: circle(100%);
-    transition: opacity 1.2s ease-in 420ms, clip-path 980ms ease-in-out 600ms;
+	position: fixed;
+	inset: 0;
+	background-color: var(--clr-primary);
+	z-index: 9999;
+	display: flex;
+	flex-wrap: wrap;
+	opacity: 1;
+	clip-path: circle(100%);
+	transition: opacity 1.2s ease-in 420ms, clip-path 980ms ease-in-out 600ms;
 }
 
 .loader img {
-    max-height: calc(100% -  2rem);
-    max-width: calc(100% -  4rem);
-    margin: 2rem auto 2rem 2rem;
+	max-height: calc(100% - 2rem);
+	max-width: calc(100% - 4rem);
+	margin: 2rem auto 2rem 2rem;
 }
 
 .loader.close {
-    opacity: 0;
-    clip-path: circle(0);
+	opacity: 0;
+	clip-path: circle(0);
 }
 
 /* header */
 .header-wrapper {
-    height: 100%;
-    width: 100%;
-    max-width: 1280px;
-    justify-content: space-between;
-    padding-inline: 3rem;
-    flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+	max-width: 1280px;
+	justify-content: space-between;
+	padding-inline: 3rem;
+	flex-wrap: wrap;
 }
 
 .header-wrapper > * {
-    margin: auto 0;
+	margin: auto 0;
 }
 
 .logo {
-    text-align: right;
-    cursor: pointer;
-    border-radius: 6px;
-    padding: 1rem;
-    border: 4px solid transparent;
-    margin-block: 1rem;
-    transition: border 150ms ease-in-out;
-    position: relative;
+	text-align: right;
+	cursor: pointer;
+	border-radius: 6px;
+	padding: 1rem;
+	border: 4px solid transparent;
+	margin-block: 1rem;
+	transition: border 150ms ease-in-out;
+	position: relative;
 }
 
 .logo > a {
-    position: absolute;
-    inset: 0;
+	position: absolute;
+	inset: 0;
 }
 
 .logo:hover {
-    border-color: var(--clr-neutral);
-    transition: border 650ms ease-in-out;
+	border-color: var(--clr-neutral);
+	transition: border 650ms ease-in-out;
 }
 
 .nav {
-    gap: 6cqi;
+	gap: 6cqi;
 }
 
 .nav > li {
-    font-size: 1.5rem;
-    position: relative;
+	font-size: 1.5rem;
+	position: relative;
 }
 
 .nav > li::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    inset: auto -8px -4px 0;
-    background: linear-gradient(to right, var(--clr-neutral), transparent);
-    transition: transform 120ms ease-out;
-    transform-origin: left;
-    transform: scaleX(0);
+	content: "";
+	position: absolute;
+	height: 2px;
+	inset: auto -8px -4px 0;
+	background: linear-gradient(to right, var(--clr-neutral), transparent);
+	transition: transform 120ms ease-out;
+	transform-origin: left;
+	transform: scaleX(0);
 }
 
 .nav > li:hover::after,
 .nav > li:focus-visible::after {
-    transform: scaleX(1);
-    transition: transform 200ms ease-out 50ms;
+	transform: scaleX(1);
+	transition: transform 200ms ease-out 50ms;
+}
+
+@media (max-width: 630px) {
+	.nav {
+		flex-direction: column;
+		position: fixed;
+		inset: 6rem 0 auto auto;
+		background-color: var(--clr-dark);
+		padding: 1rem 1rem 4rem 2.5rem;
+		z-index: 999;
+        border: 1px solid white;
+        translate: 100%;
+        transition: translate 250ms ease-out;
+	}
+
+    .nav.open {
+        translate: 0;
+    }
+
+    .burger-icon {
+        display: block;
+    }
 }
 
 /* carousel */
 .carousel-wrapper {
-    width: clamp(15rem, 95%, 55rem);
-    overflow: hidden;
-    margin: 1rem auto 0;
-    justify-content: flex-start;
-    padding: 2rem;
-    border-radius: 6px;
+	width: clamp(15rem, 95%, 55rem);
+	overflow: hidden;
+	margin: 1rem auto 0;
+	justify-content: flex-start;
+	padding: 2rem;
+	border-radius: 6px;
 }
 
 .carousel-grid {
-    --translate: 0;
+	--translate: 0;
 
-    grid-template-columns: repeat(12, auto);
-    gap: .5rem;
-    transform: translateX(0);
-    transition: all 700ms ease-in-out;
+	grid-template-columns: repeat(12, auto);
+	gap: 0.5rem;
+	transform: translateX(0);
+	transition: all 700ms ease-in-out;
 }
 
 .carousel-card {
-    position: relative;
-    width: 12rem;
-    background: linear-gradient(to right, var(--clr-accent), var(--clr-dark));
-    cursor: pointer;
-    border-radius: 2px;
-    overflow: hidden;
-    transform: scaleX(1);
-    opacity: 1;
-    transition: opacity 350ms ease-out, transform 250ms ease-out, width 350ms ease-out;
+	position: relative;
+	width: 12rem;
+	background: linear-gradient(to right, var(--clr-accent), var(--clr-dark));
+	cursor: pointer;
+	border-radius: 2px;
+	overflow: hidden;
+	transform: scaleX(1);
+	opacity: 1;
+	transition: opacity 350ms ease-out, transform 250ms ease-out,
+		width 350ms ease-out;
 }
 
 .carousel-card > img {
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    aspect-ratio: 3 / 4;
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	aspect-ratio: 3 / 4;
 }
 
 .carousel-card > h3 {
-    position: absolute;
-    inset: auto 0 2.5rem;
-    padding: .25rem;
-    color: var(--clr-accent);
-    pointer-events: none;
-    background-color: var(--clr-dark);
-    border-radius: 0 100vw 100vw 0;
+	position: absolute;
+	inset: auto 0 2.5rem;
+	padding: 0.25rem;
+	color: var(--clr-accent);
+	pointer-events: none;
+	background-color: var(--clr-dark);
+	border-radius: 0 100vw 100vw 0;
 }
 
 .carousel-card > p {
-    max-width: 37ch;
-    max-height: 100%;
-    position: absolute;
-    inset: 0;
-    text-overflow: ellipsis;
-    background-color: rgb(5 5 5 / 0);
-    color: rgb(5 5 5 / 0);
-    pointer-events: none;
-    transition: background 400ms ease-in, color 180ms ease- out 180ms;
+	max-width: 37ch;
+	max-height: 100%;
+	position: absolute;
+	inset: 0;
+	text-overflow: ellipsis;
+	background-color: rgb(5 5 5 / 0);
+	color: rgb(5 5 5 / 0);
+	pointer-events: none;
+	transition: background 400ms ease-in, color 180ms ease- out 180ms;
 }
 
 .carousel-card:hover > p {
-    background-color: rgb(5 5 5 / .4);
-    color: var(--clr-neutral);
+	background-color: rgb(5 5 5 / 0.4);
+	color: var(--clr-neutral);
 }
 
 .carousel-card:nth-child(-n + 6) {
-    transform-origin: left;
+	transform-origin: left;
 }
 
 .carousel-card:nth-child(n + 7) {
-    transform-origin: right;
+	transform-origin: right;
 }
 
 /* scrolling toggles in carousel */
 .scroll-wrapper {
-    margin: 0 auto;
-    gap: 6rem;
+	margin: 0 auto;
+	gap: 6rem;
 }
 
 .scroll-wrapper > button {
-    padding: .75rem 1.75rem;
-    cursor: pointer;
-    font-family: "Lobster", cursive;
-    font-size: 1.75rem;
-    border: 4px solid var(--clr-dark);
-    border-radius: 6px;
+	padding: 0.75rem 1.75rem;
+	cursor: pointer;
+	font-family: "Lobster", cursive;
+	font-size: 1.75rem;
+	border: 4px solid var(--clr-dark);
+	border-radius: 6px;
 }
 
 /* individual blog page */
 .blog-title {
-    margin: 3rem auto 2rem;
+	margin: 3rem auto 2rem;
 }
 
 .blog-content {
-    max-width: 76ch;
-    margin: auto auto 3rem;
+	max-width: 76ch;
+	margin: auto auto 3rem;
 }
 
 /* blog-posts list */
 .blog-grid {
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 15rem));
-    gap: .5rem;
-    padding: .5rem;
-    justify-content: center;
-    position: relative;
+	grid-template-columns: repeat(auto-fill, minmax(12rem, 15rem));
+	gap: 0.5rem;
+	padding: 0.5rem;
+	justify-content: center;
+	position: relative;
 }
 
 .blog-grid > .card {
-    position: relative;
-    border: 5px solid;
-    aspect-ratio: 4 / 3;
-    cursor: pointer;
-    opacity: 1;
-    transform: scaleY(1);
-    transition: opacity 520ms ease-out, transform 100ms 420ms, scale 220ms ease-in-out;
+	position: relative;
+	border: 5px solid;
+	aspect-ratio: 4 / 3;
+	cursor: pointer;
+	opacity: 1;
+	transform: scaleY(1);
+	transition: opacity 520ms ease-out, transform 100ms 420ms,
+		scale 220ms ease-in-out;
 }
 
-.blog-grid > .card:hover, 
+.blog-grid > .card:hover,
 .blog-grid > .card:focus-within {
-    scale: 1.1;
+	scale: 1.1;
 }
 
 .blog-grid > .card > h2 {
-    color: var(--clr-font);
-    font-size: 1.725rem;
-    pointer-events: none;
-    background-color: var(--clr-accent);
+	color: var(--clr-font);
+	font-size: 1.725rem;
+	pointer-events: none;
+	background-color: var(--clr-accent);
 }
 
 .blog-grid > .card > img {
-    position: absolute;
-    inset: 0;
-    object-fit: cover;
-    width: 100%;
-    z-index: -1;
+	position: absolute;
+	inset: 0;
+	object-fit: cover;
+	width: 100%;
+	z-index: -1;
 }
 
 .blog-grid.closed > .card:not(:nth-child(-n + 10)) {
-    opacity: 0;
-    transform: scaleY(0);
+	opacity: 0;
+	transform: scaleY(0);
 }
 
 .blog-grid > button {
-    position: absolute;
-    inset: auto 2rem 6rem auto;
-    padding: .75rem 1.75rem;
-    margin: 0 auto auto;
-    cursor: pointer;
-    font-family: "Lobster", cursive;
-    font-size: 1.75rem;
-    border: 4px solid var(--clr-dark);
-    border-radius: 6px;
+	position: absolute;
+	inset: auto 2rem 6rem auto;
+	padding: 0.75rem 1.75rem;
+	margin: 0 auto auto;
+	cursor: pointer;
+	font-family: "Lobster", cursive;
+	font-size: 1.75rem;
+	border: 4px solid var(--clr-dark);
+	border-radius: 6px;
 }
 
 @media (max-width: 1280px) {
-    .blog-grid > button {
-        inset: auto 0 -4rem;
-        margin-inline: auto;
-        width: 12rem;
-    }
+	.blog-grid > button {
+		inset: auto 0 -4rem;
+		margin-inline: auto;
+		width: 12rem;
+	}
 }
 
 /* blog-grid modal */
 .blog-modal.open {
-    position: fixed;
-    inset: 0;
-    background-color: rgb(5 5 5 / .7);
-    display: grid;
-    z-index: 99;
-    clip-path: circle(100%);
-    scale: 1;
-    overflow: hidden;
-    transition: scale 200ms ease-out, clip-path 300ms ease-in 100ms;
+	position: fixed;
+	inset: 0;
+	background-color: rgb(5 5 5 / 0.7);
+	display: grid;
+	z-index: 99;
+	clip-path: circle(100%);
+	scale: 1;
+	overflow: hidden;
+	transition: scale 200ms ease-out, clip-path 300ms ease-in 100ms;
 }
 
 .blog-modal {
-    clip-path: circle(0%);
-    scale: 0;
-    transition: scale 200ms ease-out, clip-path 300ms ease-in 100ms;
+	clip-path: circle(0%);
+	scale: 0;
+	transition: scale 200ms ease-out, clip-path 300ms ease-in 100ms;
 }
 
 .blog-modal > h2 {
-    color: white;
-    margin: auto auto 0;
+	color: white;
+	margin: auto auto 0;
 }
 
 .blog-modal > .modal-image {
-    margin: auto;
-    width: clamp(15rem, 100%, 32rem);
-    aspect-ratio: 4 / 3;
-    background-color: white;
+	margin: auto;
+	width: clamp(15rem, 100%, 32rem);
+	aspect-ratio: 4 / 3;
+	background-color: white;
 }
 
 .blog-modal > button {
-    padding: .75rem 1.75rem;
-    margin: 0 auto auto;
-    cursor: pointer;
-    font-family: "Lobster", cursive;
-    font-size: 1.75rem;
-    border: 4px solid var(--clr-dark);
-    border-radius: 6px;
+	padding: 0.75rem 1.75rem;
+	margin: 0 auto auto;
+	cursor: pointer;
+	font-family: "Lobster", cursive;
+	font-size: 1.75rem;
+	border: 4px solid var(--clr-dark);
+	border-radius: 6px;
 }
 
 /* contact page */
 .contact-form {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, 3rem);
-    gap: .5rem;
-    margin: auto;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(auto-fill, 3rem);
+	gap: 0.5rem;
+	margin: auto;
 }
 
 .form-input {
-    grid-template-columns: 5rem minmax(9rem, 15rem); 
-    grid-template-rows: 1fr auto;
+	grid-template-columns: 5rem minmax(9rem, 15rem);
+	grid-template-rows: 1fr auto;
 }
 
 .form-input p {
-    grid-column: 2;
-    font-size: .75rem;
-    color: red;
+	grid-column: 2;
+	font-size: 0.75rem;
+	color: red;
 }
 
 .form-input input,
 .contact-form textarea {
-    border: 4px solid gray;
-    padding: .25rem .5rem;
-    border-radius: 3px;
+	border: 4px solid gray;
+	padding: 0.25rem 0.5rem;
+	border-radius: 3px;
 }
 
 .form-input input.valid,
 .contact-form textarea.valid {
-    border-color:green;
+	border-color: green;
 }
 
 .form-input input.invalid,
 .contact-form textarea.invalid {
-    border-color: red;
+	border-color: red;
 }
 
 .contact-form textarea {
-    resize: none;
-    font-family: inherit;
+	resize: none;
+	font-family: inherit;
 }
 
 .contact-form textarea::placeholder {
-    font-family: inherit;
+	font-family: inherit;
 }
 
 .contact-form > input[type="submit"] {
-    padding: 1rem 2rem;
-    grid-column: 2;
+	padding: 1rem 2rem;
+	grid-column: 2;
 }
 
 .submit-modal {
-    position: fixed;
-    inset: 0;
-    background-color: var(--clr-neutral);
-    place-content: center;
-    clip-path: circle(0);
-    transition: clip-path 120ms linear;
+	position: fixed;
+	inset: 0;
+	background-color: var(--clr-neutral);
+	place-content: center;
+	clip-path: circle(0);
+	transition: clip-path 120ms linear;
 }
 
 .submit-modal.show {
-    clip-path: circle(100%);
-    transition: clip-path 420ms ease-in-out;
+	clip-path: circle(100%);
+	transition: clip-path 420ms ease-in-out;
 }
 
 .submit-modal .dialog-box {
-    background-color: var(--clr-dark);
-    color: white;
-    padding: 2rem 3rem;
-    text-align: center;
-    position: relative;
+	background-color: var(--clr-dark);
+	color: white;
+	padding: 2rem 3rem;
+	text-align: center;
+    gap: 1.25rem;
+	position: relative;
 }
 
 .dialog-box > button {
-    position: absolute;
-    inset: .5rem .5rem auto auto;
+	position: absolute;
+	inset: 0.5rem 0.5rem auto auto;
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid var(--clr-accent);
+    background: linear-gradient(to right, transparent 25%, var(--clr-accent) 75%);
+    background-position-x: left;
+    background-size: 500%;
+    color: var(--clr-accent);
+    transition: background 420ms ease-out, color 120ms ease-in 220ms;
+    cursor: pointer;
+}
+
+.dialog-box > button:hover,
+.dialog-box > button:focus-visible {
+    background-position-x: right;
+    color: var(--clr-dark);
 }
