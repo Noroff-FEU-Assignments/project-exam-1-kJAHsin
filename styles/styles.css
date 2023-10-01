@@ -152,12 +152,13 @@ p {
 	.nav {
 		flex-direction: column;
 		position: fixed;
-		inset: 0 0 auto auto;
+		inset: 0 0 0 auto;
 		background-color: var(--clr-dark);
 		padding: 6rem 1rem 4rem 2.5rem;
 		z-index: 999;
         translate: 100%;
         transition: translate 250ms ease-out;
+		border-left: 2px solid white;
 	}
 
     .nav.open {
