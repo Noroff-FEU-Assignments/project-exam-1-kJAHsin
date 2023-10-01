@@ -64,17 +64,19 @@ function validateMessage() {
 
 // array of inputs for contact form
 const contactInputs = [
-	...contactForm.querySelectorAll("input"),
+	...contactForm.querySelectorAll("input:not([type='submit'])"),
 	contactForm.querySelector("textarea"),
 ];
 
 // catch errors and report error message to user
 function alertInvalid() {
-	contactInputs.forEach((input) => {
-		if (input.className === "invalid") {
+	const errorMessage = document.querySelectorAll(".form-input p");
+	
+	contactInputs.forEach((input, idx) => {
+		if (input.className == "invalid") {
 			const messageKey = input.id;
 			const alertMessage = invalidAlertMessages[messageKey];
-			alert(alertMessage);
+			errorMessage[idx].innerText = alertMessage;
 		}
 	});
 }

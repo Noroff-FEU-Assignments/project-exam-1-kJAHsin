@@ -348,35 +348,50 @@ p {
 
 /* contact page */
 .contact-form {
-    grid-template-columns: max-content 15rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 3rem);
     gap: .5rem;
-    margin-inline: auto;
+    margin: auto;
 }
 
-.contact-form > input,
-.contact-form > textarea {
-    border: 6px solid gray;
+.form-input {
+    grid-template-columns: 5rem minmax(9rem, 15rem); 
+    grid-template-rows: 1fr auto;
 }
 
-.contact-form > input.valid,
-.contact-form > textarea.valid {
-    border: 6px solid green;
+.form-input p {
+    grid-column: 2;
+    font-size: .75rem;
+    color: red;
 }
 
-.contact-form > input.invalid,
-.contact-form > textarea.invalid {
-    border: 6px solid red;
+.form-input input,
+.contact-form textarea {
+    border: 4px solid gray;
+    padding: .25rem .5rem;
+    border-radius: 3px;
 }
 
-.contact-form > textarea {
+.form-input input.valid,
+.contact-form textarea.valid {
+    border-color:green;
+}
+
+.form-input input.invalid,
+.contact-form textarea.invalid {
+    border-color: red;
+}
+
+.contact-form textarea {
     resize: none;
-}
-
-.contact-form > textarea {
     font-family: inherit;
 }
 
-.contact-form > input:last-child {
+.contact-form textarea::placeholder {
+    font-family: inherit;
+}
+
+.contact-form > input[type="submit"] {
     padding: 1rem 2rem;
     grid-column: 2;
 }
