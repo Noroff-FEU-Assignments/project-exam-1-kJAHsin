@@ -117,6 +117,9 @@ function showModal() {
 
 function closeModal() {
 	submitModal.classList.remove("show");
+	contactInputs.forEach(input => {
+		input.value = "";
+	})
 }
 
 submitBtn.addEventListener("click", showModal);
