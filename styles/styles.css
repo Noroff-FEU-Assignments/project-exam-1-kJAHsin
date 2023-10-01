@@ -1,4 +1,5 @@
 /* imports */
+@import url(./reset.css);
 @import url(./variables.css);
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:wght@400;500;600;700;800&display=swap');
 
@@ -120,12 +121,12 @@ p {
     gap: 6cqi;
 }
 
-.nav > a {
+.nav > li {
     font-size: 1.5rem;
     position: relative;
 }
 
-.nav > a::after {
+.nav > li::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -136,8 +137,8 @@ p {
     transform: scaleX(0);
 }
 
-.nav > a:hover::after,
-.nav > a:focus-visible::after {
+.nav > li:hover::after,
+.nav > li:focus-visible::after {
     transform: scaleX(1);
     transition: transform 200ms ease-out 50ms;
 }
