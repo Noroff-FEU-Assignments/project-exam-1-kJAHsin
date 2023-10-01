@@ -103,6 +103,12 @@ p {
     border: 4px solid transparent;
     margin-block: 1rem;
     transition: border 150ms ease-in-out;
+    position: relative;
+}
+
+.logo > a {
+    position: absolute;
+    inset: 0;
 }
 
 .logo:hover {

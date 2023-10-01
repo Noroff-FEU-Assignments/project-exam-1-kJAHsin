@@ -1,7 +1,5 @@
 import { fetchPosts } from "../functions/fetch.js";
 import { fetchImgURL } from "../functions/fetchimage.js";
-import { logoLink } from "../functions/links.js";
-logoLink();
 
 // fetch specific blog
 const getBlog = async () => {

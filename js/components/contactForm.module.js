@@ -1,8 +1,4 @@
 import { isValid, isNotValid } from "../functions/validation.js";
-import { logoLink } from "../functions/links.js";
-
-// setting home link on logo
-logoLink();
 
 // form validation
 // hooking into 

@@ -1,9 +1,5 @@
 import { fetchPosts } from "../functions/fetch.js";
 import { fetchImgURL } from "../functions/fetchimage.js";
-import { logoLink } from "../functions/links.js";
-
-// set home link on logo in header
-logoLink();
 
 // hoooking into cards in blog grid
 const cards = document.querySelectorAll(".blog-grid > .card");

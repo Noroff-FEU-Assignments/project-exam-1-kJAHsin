@@ -1,8 +1,10 @@
 // make logo into link to home page
-export function logoLink() {
+function logoLink() {
     const logoLink = document.querySelector(".logo");
     
     logoLink.addEventListener("click", () => {
         window.location = "./index.html"
     })
 }
+
+logoLink();
