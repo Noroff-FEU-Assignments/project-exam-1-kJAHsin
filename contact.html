@@ -8,7 +8,30 @@
 			content="OkkaSopp mushroom blog contact page"
 		/>
 		<title>OkkaSopp | Contact</title>
-		<script src="./js/components/contactForm.module.js" type="module"></script>
+		<script
+			src="./js/components/contactForm.module.js"
+			type="module"
+		></script>
+		<script>
+			(function (h, o, t, j, a, r) {
+				h.hj =
+					h.hj ||
+					function () {
+						(h.hj.q = h.hj.q || []).push(arguments);
+					};
+				h._hjSettings = { hjid: 3676150, hjsv: 6 };
+				a = o.getElementsByTagName("head")[0];
+				r = o.createElement("script");
+				r.async = 1;
+				r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(
+				window,
+				document,
+				"https://static.hotjar.com/c/hotjar-",
+				".js?sv="
+			);
+		</script>
 		<link rel="stylesheet" href="./styles/reset.css" />
 		<link rel="stylesheet" href="./styles/variables.css" />
 		<link rel="stylesheet" href="./styles/styles.css" />
@@ -21,7 +44,7 @@
 					<small>your blog about shrooms</small>
 				</div>
 				<ul class="nav flex" aria-label="navigation">
-					<li><a href="./index.html" >home</a></li>
+					<li><a href="./index.html">home</a></li>
 					<li><a href="./blog-posts.html">posts</a></li>
 					<li><a href="./about.html">about</a></li>
 					<li><a href="./contact.html">contact</a></li>
@@ -32,13 +55,30 @@
 			<h1>Contact Us</h1>
 			<form action="#" class="contact-form grid">
 				<label for="contactName">Name:</label>
-				<input type="text" id="contactName" minlength="5" placeholder="enter your name"/>
+				<input
+					type="text"
+					id="contactName"
+					minlength="5"
+					placeholder="enter your name"
+				/>
 				<label for="contactEmail">Email:</label>
-				<input type="text" id="contactEmail" placeholder="enter your email"/>
+				<input
+					type="text"
+					id="contactEmail"
+					placeholder="enter your email"
+				/>
 				<label for="contactSubject">Subject:</label>
-				<input type="text" id="contactSubject" placeholder="enter a subject for your message"/>
+				<input
+					type="text"
+					id="contactSubject"
+					placeholder="enter a subject for your message"
+				/>
 				<label for="contactMessage">Message:</label>
-				<textarea id="contactMessage" rows="5" placeholder="enter your message here"></textarea>
+				<textarea
+					id="contactMessage"
+					rows="5"
+					placeholder="enter your message here"
+				></textarea>
 				<input type="submit" value="submit" id="submitBtn" />
 			</form>
 			<p>
