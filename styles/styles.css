@@ -148,13 +148,14 @@ p {
 	transition: transform 200ms ease-out 50ms;
 }
 
+/* nav meny on smaller screens */
 @media (max-width: 630px) {
 	.nav {
 		flex-direction: column;
 		position: fixed;
 		inset: 0 0 0 auto;
 		background-color: var(--clr-dark);
-		padding: 6rem 1rem 4rem 2.5rem;
+		padding: 6rem 2rem 4rem 2.5rem;
 		z-index: 999;
         translate: 100%;
         transition: translate 250ms ease-out;

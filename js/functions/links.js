@@ -1,4 +1,4 @@
-// make logo into link to home page
+// make logo link to home page
 export function logoLink() {
     const logoLink = document.querySelector(".logo");
     

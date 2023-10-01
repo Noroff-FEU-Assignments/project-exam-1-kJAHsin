@@ -5,7 +5,7 @@ import { logoLink } from "../functions/links.js";
 logoLink();
 
 // form validation
-// hooking into 
+// hooking into
 const contactForm = document.querySelector(".contact-form");
 const contactName = document.getElementById("contactName");
 const contactEmail = document.getElementById("contactEmail");
@@ -43,7 +43,9 @@ function validateEmail() {
 	const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 	const emailInput = contactEmail.value;
 
-	regEx.test(emailInput) ? isValid(contactEmail) : isNotValid(contactEmail);
+	regEx.test(emailInput) 
+		? isValid(contactEmail) 
+		: isNotValid(contactEmail);
 }
 
 // validate subject
@@ -71,7 +73,7 @@ const contactInputs = [
 // catch errors and report error message to user
 function alertInvalid() {
 	const errorMessage = document.querySelectorAll(".form-input p");
-	
+
 	contactInputs.forEach((input, idx) => {
 		if (input.className == "invalid") {
 			const messageKey = input.id;
@@ -92,7 +94,7 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 // dynamic change of validation colors
-contactInputs.forEach(input => {
+contactInputs.forEach((input) => {
 	input.addEventListener("keydown", () => {
 		validateName();
 		validateEmail();
@@ -107,19 +109,19 @@ const closeBtn = document.querySelector(".close-modal");
 const modalText = submitModal.querySelector("p");
 
 function showModal() {
-	contactInputs.forEach(input => {
+	contactInputs.forEach((input) => {
 		if (input.className != "invalid") {
 			submitModal.classList.add("show");
 			modalText.innerText = contactName.value;
 		}
-	})
+	});
 }
 
 function closeModal() {
 	submitModal.classList.remove("show");
-	contactInputs.forEach(input => {
+	contactInputs.forEach((input) => {
 		input.value = "";
-	})
+	});
 }
 
 submitBtn.addEventListener("click", showModal);

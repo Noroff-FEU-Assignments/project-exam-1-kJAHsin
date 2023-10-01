@@ -1,7 +1,7 @@
 const loader = document.querySelector(".loader");
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
     setTimeout(() => {
         loader.classList.add("close");
-    }, 600);
+    }, 800);
 });
